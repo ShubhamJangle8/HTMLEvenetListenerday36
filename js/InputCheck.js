@@ -23,3 +23,14 @@ let emailRegex = RegExp('^[a-zA-Z0-9_]+[-+.]?[A-Za-z0-9_]+@[A-Za-z0-9]+[.][a-z]{
   else
     emailError.textContent = "Provide valid email";
 }
+
+const phone = document.querySelector('#tel');
+const phoneError = document.querySelector('.tel-error');
+phone.addEventListener('input',function(){
+    let phoneRegex = RegExp('^([0-9]{1,4}[ ][0-9]{10})$');
+    if(phoneRegex.test(phone.value)){
+        phoneError.textContent = "";
+    }else{
+        phoneError.textContent = "Phone number is incorrect";
+    }
+}); 
