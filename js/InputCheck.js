@@ -8,8 +8,18 @@ const text = document.querySelector('#text');
 const textError = document.querySelector('.text-error');
 text.oninput =  function(){
 let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
-  if(nameRegex.test(text.value))
+  if(nameRegex.test(text.value) || text.value == "")
     textError.textContent = "";
   else
     textError.textContent = "Name is Incorrect";
 };
+
+const email = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+function takeEmail(){
+let emailRegex = RegExp('^[a-zA-Z0-9_]+[-+.]?[A-Za-z0-9_]+@[A-Za-z0-9]+[.][a-z]{2,}[.]?([a-z]{2,})?$');
+  if(emailRegex.test(email.value) || email.value == "")
+    emailError.textContent = "";
+  else
+    emailError.textContent = "Provide valid email";
+}
