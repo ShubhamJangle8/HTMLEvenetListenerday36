@@ -34,3 +34,14 @@ phone.addEventListener('input',function(){
         phoneError.textContent = "Phone number is incorrect";
     }
 }); 
+
+const pass = document.querySelector('#pwd');
+const passError = document.querySelector('.pass-error');
+pass.addEventListener('input',function(){
+    let passRegex = RegExp('[A-z0-9@#$%*]{8,}$');
+    if(passRegex.test(pass.value)){
+        passError.textContent = "";
+    }else{
+        passError.textContent = "Password is incorrect";
+    }
+});
